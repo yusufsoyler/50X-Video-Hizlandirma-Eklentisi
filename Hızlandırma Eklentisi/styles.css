@@ -1,0 +1,274 @@
+:root {
+  --primary-color: #2196F3;
+  --primary-light: #64B5F6;
+  --primary-dark: #1976D2;
+  --slow-color: #4CAF50;
+  --normal-color: #2196F3;
+  --fast-color: #FF9800;
+  --super-fast-color: #FF5722;
+  --ultra-fast-color: #F44336;
+  --background-color: #fff;
+  --text-color: #333;
+  --border-radius: 8px;
+  --modal-background: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+}
+
+.container {
+  padding: 16px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 24px;
+}
+
+.current-speed {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary-dark);
+  margin: 10px 0;
+}
+
+.speed-control {
+  margin: 20px 0;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  background: var(--primary-light);
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: var(--primary-dark);
+}
+
+.speed-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-color);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.preset-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.speed-btn {
+  padding: 8px;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--primary-light);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.speed-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.speed-btn.slow {
+  background: #4CAF50;
+}
+
+.speed-btn.normal {
+  background: var(--primary-color);
+}
+
+.speed-btn.fast {
+  background: #FF9800;
+}
+
+.speed-btn.super-fast {
+  background: #F44336;
+}
+
+.speed-btn.ultra-fast {
+  background: #9C27B0;
+}
+
+/* Disabled State */
+#speedControls.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Header ve Sol Kontroller */
+.left-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 18px;
+  padding: 5px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.icon-button:hover {
+  color: var(--primary-color);
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-label {
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-background);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 300px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 0;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: var(--primary-color);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-item label {
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.setting-item input[type="number"] {
+  width: 60px;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.shortcut-info {
+  font-size: 12px;
+  color: #666;
+}
+
+.shortcut-info p {
+  margin: 5px 0;
+}
+
+kbd {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  color: #333;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+/* Disabled state güncellemeleri */
+.disabled .toggle-label {
+  color: #999;
+}
+
+.disabled .icon-button {
+  opacity: 0.5;
+  pointer-events: none;
+} 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>50x Faster</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>50x Faster</h1>
+      <div class="current-speed">
+        <span id="speedValue">1.00</span>x
+      </div>
+    </div>
+
+    <div class="speed-control">
+      <input type="range" id="speedSlider" min="0.25" max="50" step="0.25" value="1">
+      <div class="speed-labels">
+        <span>0.25x</span>
+        <span>50x</span>
+      </div>
+    </div>
+
+    <div class="preset-buttons">
+      <button data-speed="0.25" class="speed-btn slow">0.25x</button>
+      <button data-speed="0.5" class="speed-btn slow">0.5x</button>
+      <button data-speed="1" class="speed-btn normal">1x</button>
+      <button data-speed="1.5" class="speed-btn fast">1.5x</button>
+      <button data-speed="2" class="speed-btn fast">2x</button>
+      <button data-speed="5" class="speed-btn super-fast">5x</button>
+      <button data-speed="10" class="speed-btn super-fast">10x</button>
+      <button data-speed="50" class="speed-btn ultra-fast">50x</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
